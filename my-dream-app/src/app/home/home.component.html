@@ -49,4 +49,23 @@
   </app-user>
 </li>
 </ul>
+<hr>
+<h2>Two-Way Data Binding con ngModel</h2>
+
+<div class="data-binding-form">
+  <div>
+    <label>Nombre:</label>
+    <!-- Aquí está la magia: [(ngModel)] conecta este input a la propiedad 'name' -->
+    <input type="text" [(ngModel)]="name">
+  </div>
+  <div>
+    <label>Edad:</label>
+    <input type="number" [(ngModel)]="age">
+  </div>
+</div>
+
+<!-- Mostramos los valores para ver cómo cambian en tiempo real -->
+<h3>Valores actuales:</h3>
+<p><strong>Nombre:</strong> {{ name }}</p>
+<p><strong>Edad:</strong> {{ age }}</p>
 </div>

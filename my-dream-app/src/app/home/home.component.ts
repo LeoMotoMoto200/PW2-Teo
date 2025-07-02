@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { Data } from '../data'; // <--- Ruta correcta
 import { Post } from '../Post';
 import { UserComponent } from '../components/user/user.component';
+import { FormsModule } from '@angular/forms'; // <-- 1. Importa FormsModule
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, UserComponent],
+  imports: [CommonModule, UserComponent, FormsModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
 
   // Propiedades (como las tenías antes)
   name: string = "Carlo Jose Luis";
+  age: number = 40;
   email: string = "ccorrales@unsa.edu.pe";
   webpage: string = "http://www.unsa.edu.pe";
   hobbies: string[];
