@@ -5,17 +5,20 @@ import { Component, OnInit } from '@angular/core'; // <--- Importamos OnInit
 import { CommonModule } from '@angular/common';
 import { Data } from '../data'; // <--- Ruta correcta
 import { Post } from '../Post';
+import { UserComponent } from '../components/user/user.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UserComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 
 // 2. Implementamos OnInit correctamente
 export class HomeComponent implements OnInit {
+
+  users: string[] = ['Ryan', 'Joe', 'Cameron', 'John'];
 
   // Propiedades (como las tenías antes)
   name: string = "Carlo Jose Luis";

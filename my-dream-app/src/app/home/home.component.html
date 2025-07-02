@@ -37,4 +37,18 @@
     <p>Cargando datos...</p>
   </ng-template>
 </div>
+<hr>
+<h2>Lista de Usuarios (con Componente Reutilizable):</h2>
+<ul>
+  <!-- Hacemos un bucle sobre la lista 'users' -->
+  <li *ngFor="let user of users">
+    <!-- 
+      Usamos nuestro nuevo componente <app-user>.
+      Con [nameUser]="user", le estamos pasando el valor de la variable 'user' (del bucle)
+      a la propiedad 'nameUser' del componente hijo.
+      Los corchetes [] son la clave para el "Property Binding".
+    -->
+    <app-user [nameUser]="user"></app-user>
+  </li>
+</ul>
 </div>
