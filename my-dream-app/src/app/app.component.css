@@ -11,3 +11,13 @@
   color: red;
   padding: 20px;
 }
+.btn {
+    padding: 10px;
+    color: white;
+    background-color: brown;
+    cursor: pointer;
+    border: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}

@@ -20,6 +20,19 @@ export class AppComponent {
     this.hobbies = ["Futbol", "Programacion", "Netflix"];
   }
 
+  toggleHobbies() {
+    this.showhobbies = !this.showhobbies;
+  }
+
+  newHobby(hobby: HTMLInputElement) {
+    if (hobby.value.trim()) { // .trim() para evitar hobbies vacíos
+        this.hobbies.push(hobby.value.trim());
+        hobby.value = '';
+    }
+    hobby.focus();
+    return false;
+  }
+
   showhobbies() {
     return true;
   }
