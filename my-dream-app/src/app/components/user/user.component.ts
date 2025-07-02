@@ -19,4 +19,11 @@ export class UserComponent {
     // 4. Usa el emisor para disparar el evento, enviando el nombre del usuario como "carga".
     this.userClicked.emit(this.nameUser);
   }
+    @Output() deleteRequest = new EventEmitter<string>();
+
+  // ... (método onUserClick)
+
+  onDeleteClick(): void {
+    this.deleteRequest.emit(this.nameUser);
+  }
 }

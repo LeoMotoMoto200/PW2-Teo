@@ -24,13 +24,14 @@ export class HomeComponent implements OnInit {
   name: string = "Carlo Jose Luis";
   email: string = "ccorrales@unsa.edu.pe";
   webpage: string = "http://www.unsa.edu.pe";
-  hobbies: string[] = ["Fútbol", "Programación", "Netflix"];
+  hobbies: string[];
   showHobbies: boolean = true;
   posts: Post[] = [];
 
   // 3. Constructor limpio y correcto
   constructor(private dataService: Data) {
     console.log("Constructor de Home funcionando...");
+    this.hobbies = ["Futbol", "Programación", "Netflix"];
   }
 
   // 4. ngOnInit para la lógica asíncrona (es una mejor práctica)
@@ -56,5 +57,13 @@ export class HomeComponent implements OnInit {
   // Este método recibirá el nombre que el hijo emita.
 onUserSelected(name: string): void {
   alert("El componente padre (Home) ha recibido un saludo de: " + name);
+}
+
+deleteUser(nameToDelete: string): void {
+  // El método filter() de los arrays es perfecto para esto.
+  // Crea un NUEVO array que contiene solo los elementos que cumplen la condición.
+  // En este caso, nos quedamos con todos los usuarios cuyo nombre NO sea el que queremos borrar.
+  this.users = this.users.filter(user => user !== nameToDelete);
+  console.log(`Usuario ${nameToDelete} eliminado.`);
 }
 }
