@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { DataService } from './data';
+import { Post } from './Post';
 
 import { CommonModule } from '@angular/common'
 
@@ -18,14 +20,19 @@ export class AppComponent {
   webpage : string;
   hobbies : string[];
   showHobbies : boolean = true;
+  posts : Post[] = [];
 
-  constructor() {
+  constructor(private dataService: DataService) {
     console.log("Constructor working... ");
     this.name = "Carlo Jose Luis";
     this.email = "ccorrales@unsa.edu.pe";
     this.webpage = "http://www.unsa.edu.pe";
     this.hobbies = ["Futbol", "Programacion", "Netflix"];
     this.showHobbies = true;
+    this.dataService.getData().subscribe(data => {
+      console.log(data);
+      this.posts = data;
+    })
   }
 
   toggleHobbies() {
