@@ -1,0 +1,40 @@
+
+<div class="ash">
+  <h2>{{ name }}</h2>
+  <h2>{{ email }}</h2>
+  <a href="{{ webpage }}" target="_blank">Visita mi sitio Web</a>
+  
+  <hr>
+
+  <button (click)="toggleHobbies()" class="btn">
+    {{ showHobbies ? 'Ocultar Hobbies' : 'Mostrar Hobbies' }}
+  </button>
+
+  <div *ngIf="showHobbies" class="component2">
+    <h3>Hobbies:</h3>
+    <ul>
+      <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
+    </ul>
+
+    <form (submit)="newHobby(hobbyInput)">
+      <input #hobbyInput type="text" placeholder="Añade un hobby">
+      <button type="submit">Agregar</button>
+    </form>
+
+    <!-- src/app/home/home.component.html -->
+<div class="container">
+  <h1>Posts de la API</h1>
+  <p>Esta es una lista de posts traídos desde una API externa.</p>
+  
+  <ul class="post-list" *ngIf="posts.length > 0; else loading">
+    <li *ngFor="let post of posts">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </li>
+  </ul>
+
+  <ng-template #loading>
+    <p>Cargando datos...</p>
+  </ng-template>
+</div>
+</div>

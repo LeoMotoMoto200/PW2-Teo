@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { DataService } from './data';
 import { Post } from './Post';
 
 import { CommonModule } from '@angular/common'
@@ -8,13 +7,13 @@ import { CommonModule } from '@angular/common'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-  title = 'my-dream-app';
+  title = 'PW2-Teo';
   name : string;
   email : string;
   webpage : string;
@@ -22,17 +21,13 @@ export class AppComponent {
   showHobbies : boolean = true;
   posts : Post[] = [];
 
-  constructor(private dataService: DataService) {
+  constructor() {
     console.log("Constructor working... ");
     this.name = "Carlo Jose Luis";
     this.email = "ccorrales@unsa.edu.pe";
     this.webpage = "http://www.unsa.edu.pe";
     this.hobbies = ["Futbol", "Programacion", "Netflix"];
     this.showHobbies = true;
-    this.dataService.getData().subscribe(data => {
-      console.log(data);
-      this.posts = data;
-    })
   }
 
   toggleHobbies() {

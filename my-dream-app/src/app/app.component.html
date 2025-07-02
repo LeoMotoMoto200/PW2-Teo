@@ -1,23 +1,12 @@
-<router-outlet></router-outlet>
-<div class="ash">
-  <h2>{{ name }}</h2>
-  <h2>{{ email }}</h2>
-  <a href="{{ webpage }}" target="_blank">Visita mi sitio Web</a>
-  
-  <hr>
+  <router-outlet></router-outlet>
+<nav class="main-nav">
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active-link">Inicio</a></li>
+    <li><a routerLink="/about" routerLinkActive="active-link">Acerca de</a></li>
+  </ul>
+</nav>
 
-  <button (click)="toggleHobbies()" class="btn">
-    {{ showHobbies ? 'Ocultar Hobbies' : 'Mostrar Hobbies' }}
-  </button>
-
-  <div *ngIf="showHobbies" class="component2">
-    <h3>Hobbies:</h3>
-    <ul>
-      <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
-    </ul>
-
-    <form (submit)="newHobby(hobbyInput)">
-      <input #hobbyInput type="text" placeholder="Añade un hobby">
-      <button type="submit">Agregar</button>
-    </form>
-</div>
+<!-- Este es el escenario donde se mostrarán HomeComponent y AboutComponent -->
+<main>
+  <router-outlet></router-outlet>
+</main>
