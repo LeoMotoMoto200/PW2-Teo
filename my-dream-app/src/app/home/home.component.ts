@@ -53,4 +53,8 @@ export class HomeComponent implements OnInit {
     }
     hobby.focus();
   }
+  // Este método recibirá el nombre que el hijo emita.
+onUserSelected(name: string): void {
+  alert("El componente padre (Home) ha recibido un saludo de: " + name);
+}
 }

@@ -48,7 +48,7 @@
       a la propiedad 'nameUser' del componente hijo.
       Los corchetes [] son la clave para el "Property Binding".
     -->
-    <app-user [nameUser]="user"></app-user>
+    <app-user [nameUser] = "user" (userClicked) = "onUserSelected($event)"></app-user>
   </li>
 </ul>
 </div>
