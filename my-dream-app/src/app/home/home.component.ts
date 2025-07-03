@@ -24,9 +24,9 @@ export class HomeComponent implements OnInit {
   users: string[] = ['Ryan', 'Joe', 'Cameron', 'John'];
 
   // Propiedades (como las tenías antes)
-  name: string = "Carlo Jose Luis";
-  age: number = 40;
-  email: string = "ccorrales@unsa.edu.pe";
+  name: string = "Leonardo Juan José Baca Calsin";
+  age: number = 18;
+  email: string = "lbacac@unsa.edu.pe";
   webpage: string = "http://www.unsa.edu.pe";
   hobbies: string[];
   showHobbies: boolean = true;
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   // 3. Constructor limpio y correcto
   constructor(private dataService: Data) {
     console.log("Constructor de Home funcionando...");
-    this.hobbies = ["Futbol", "Programación", "Netflix"];
+    this.hobbies = ["Futbol", "Baile", "Youtube"];
   }
 
   // 4. ngOnInit para la lógica asíncrona (es una mejor práctica)
