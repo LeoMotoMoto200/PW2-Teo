@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     },
     {
       title : "Spider-Man: No Way Home - Tráiler Oficial",
-      id : "S-C_Kk6i_qI"
+      id : "JfVOs4VSpmA"
     }
   ];
 

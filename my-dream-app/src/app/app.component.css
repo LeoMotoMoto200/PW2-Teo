@@ -3,3 +3,40 @@
 .main-nav ul li a { color: white; text-decoration: none; padding: 10px 15px; }
 .active-link { background-color: #555; }
 main { padding: 20px; }
+/* src/app/app.component.css */
+:host {
+  display: block;
+  max-width: 960px; /* Ancho máximo para el contenido */
+  margin: 0 auto; /* Centrar el contenedor */
+  background-color: #ffffff; /* Fondo blanco para el contenido */
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+.main-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Espacio entre elementos del menú */
+}
+
+.main-nav ul li a {
+  color: #007bff; /* Un azul para los links */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.active-link {
+  color: #333;
+  border-bottom: 2px solid #007bff;
+}

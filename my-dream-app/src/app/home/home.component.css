@@ -33,3 +33,77 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #ccc;
 }
+/* src/app/home/home.component.css */
+
+/* Estilo general para las tarjetas */
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor para la lista de usuarios */
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+.user-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+.user-list li:last-child {
+  border-bottom: none;
+}
+
+/* Formulario de Hobbies */
+.hobby-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+.hobby-form input {
+  flex-grow: 1; /* El input ocupa todo el espacio disponible */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.hobby-form button {
+  padding: 8px 15px;
+  background-color: #28a745; /* Verde */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Tarjeta para los Posts de la API */
+.post-card {
+  background-color: #eef;
+}
+.post-card h3 {
+  margin-top: 0;
+}
+
+/* Contenedor para la galería de videos */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Grid responsive */
+  gap: 20px;
+}
+.video-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+.video-container iframe {
+  width: 100%; /* El iframe se adapta al contenedor */
+  height: auto;
+  aspect-ratio: 16 / 9; /* Mantiene la proporción 16:9 */
+  border-radius: 4px;
+}
