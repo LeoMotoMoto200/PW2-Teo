@@ -68,4 +68,26 @@
 <h3>Valores actuales:</h3>
 <p><strong>Nombre:</strong> {{ name }}</p>
 <p><strong>Edad:</strong> {{ age }}</p>
+
+<hr>
+<h2>Galería de Videos</h2>
+
+<!-- Hacemos un bucle sobre nuestra lista de videos -->
+<div *ngFor="let video of videos" class="video-container">
+  <h4>{{ video.title }}</h4>
+
+  <!--
+    Aquí está la magia combinada:
+    1. Construimos la URL completa para incrustar el video de YouTube.
+    2. Usamos el pipe '| safe' que creamos. Este pipe tomará la URL
+       y le devolverá a Angular una versión "sanitizada" en la que confía.
+    3. Usamos [src] (Property Binding) para asignar esa URL segura al atributo 'src' del iframe.
+  -->
+  <iframe width="560" height="315"
+          [src]="'https://www.youtube.com/embed/' + video.id | safe"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+  </iframe>
+</div>
 </div>

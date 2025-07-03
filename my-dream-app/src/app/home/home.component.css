@@ -28,3 +28,8 @@
   display: inline-block;
   width: 80px;
 }
+.video-container {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}

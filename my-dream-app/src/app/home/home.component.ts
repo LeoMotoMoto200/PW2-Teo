@@ -7,11 +7,13 @@ import { Data } from '../data'; // <--- Ruta correcta
 import { Post } from '../Post';
 import { UserComponent } from '../components/user/user.component';
 import { FormsModule } from '@angular/forms'; // <-- 1. Importa FormsModule
+import { title } from 'process';
+import { SafePipe } from '../pipes/safe-pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, UserComponent, FormsModule],
+  imports: [CommonModule, UserComponent, FormsModule, SafePipe],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -29,6 +31,20 @@ export class HomeComponent implements OnInit {
   hobbies: string[];
   showHobbies: boolean = true;
   posts: Post[] = [];
+  videos: any[] = [
+    {
+      title : "Avengers: Infinity War - Tráiler Oficial",
+      id : "6ZfuNTqbHE8"
+    },
+    {
+      title : "The incredible Hulk - Tráiler",
+      id : "xbqNb2PFKKA"
+    },
+    {
+      title : "Spider-Man: No Way Home - Tráiler Oficial",
+      id : "S-C_Kk6i_qI"
+    }
+  ];
 
   // 3. Constructor limpio y correcto
   constructor(private dataService: Data) {
